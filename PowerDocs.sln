@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDocs", "PowerDocs\PowerDocs.csproj", "{978F22D1-8431-4874-8BA2-AB42E1E1E317}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{978F22D1-8431-4874-8BA2-AB42E1E1E317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978F22D1-8431-4874-8BA2-AB42E1E1E317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978F22D1-8431-4874-8BA2-AB42E1E1E317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978F22D1-8431-4874-8BA2-AB42E1E1E317}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FF35070-E5FF-41B2-A826-360C7C5C9A9D}
+	EndGlobalSection
+EndGlobal
