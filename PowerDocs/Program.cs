@@ -4,13 +4,12 @@ using PowerDocs;
 
 Console.WriteLine("Hello, World!");
 
-Parser.Default.ParseArguments<Options>(args).WithParsed<Options>(o => {
+Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed<CommandLineOptions>(o => {
     if (Directory.Exists(o.InputFolder))
     {
-        var pUtils = new PowerappsUtils();
-        if (pUtils.TryParseApp(o.InputFolder, out var parsedApp))
-        {
-            pUtils.GenerateDoc(o.InputFolder, o.OutputFile);
-        }
+        var pUtils = new PowerappUtils();
+        pUtils.LoadApp(o.InputFolder);
+
+        Console.WriteLine(String.Join(",",pUtils.getScreenNames().ToArray()));
     } 
 });

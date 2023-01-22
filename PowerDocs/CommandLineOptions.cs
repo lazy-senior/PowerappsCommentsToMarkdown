@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace PowerDocs
 {
-    internal class Options
+    internal class CommandLineOptions
     {
         [Option('i', "input", Required = true)]
         public string? InputFolder { get; set; }
 
-        [Option('o', "output", Required = true)]
+        [Option('o', "output", Required = false)]
         public string? OutputFile { get; set; }
     }
 }
