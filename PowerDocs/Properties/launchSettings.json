@@ -2,7 +2,7 @@
   "profiles": {
     "PowerDocs": {
       "commandName": "Project",
-      "commandLineArgs": "-i \"C:\\Users\\boeni\\source\\powerapps-docstring-main\\powerapps-docstring-main\\example\\src\\meetingcapturedemo\""
+      "commandLineArgs": "-i \"C:\\Users\\boeni\\source\\powerapps-docstring-main\\powerapps-docstring-main\\example\\src\\meetingcapturedemo\" -c \"C:\\Users\\boeni\\source\\repos\\PowerDocs\\PowerDocs\\config.yaml\""
     }
   }
 }

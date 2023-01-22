@@ -14,5 +14,8 @@ namespace PowerDocs
 
         [Option('o', "output", Required = false)]
         public string? OutputFile { get; set; }
+
+        [Option('c', "config", Required = true)]
+        public string? ConfigFile { get; set; }
     }
 }

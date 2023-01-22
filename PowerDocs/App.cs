@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -11,55 +12,45 @@ using YamlDotNet.Serialization.NamingConventions;
 
 namespace PowerDocs
 {
-    internal class PowerappUtils
+    internal class App
     {
         private JsonElement AppSettings { get; set; }
         private Dictionary<string, JsonElement> Screens { get; set; }
-        private IDeserializer yamlDeserializer { get; set; }
-        private ISerializer yamlSerializer { get; set; }
+        private YamlUtils YamlUtils { get; set; } = new();
+        private Config Config { get; set; }
 
-        public PowerappUtils() { 
-            yamlDeserializer = new DeserializerBuilder()
-                .WithNamingConvention(UnderscoredNamingConvention.Instance)
-                .Build();
-
-            yamlSerializer = new SerializerBuilder()
-                .JsonCompatible()
-                .Build();
-
+        public App()
+        {
             Screens = new Dictionary<string, JsonElement>();
         }
-        private bool isYamlFile(string path)
+
+        public App(string configFile) : this()
         {
-            return path.EndsWith("yaml");
+            Config = YamlUtils.SerializeFile<Config>(configFile);
+            Console.Write(Config.MermaidPrefix);
+        }
+
+        private bool isValidPowerappsFolder(string path)
+        {
+            return Directory.Exists(path + "/Src");
         }
 
         private IList<string> getYAMLFilesInDirectory(string path)
         {
-            return Directory.GetFiles(path).Where(f => isYamlFile(f)).ToList();
+            return Directory.GetFiles(path).Where(f => YamlUtils.IsYamlFile(f)).ToList();
         }
 
         public void LoadApp(string filePath) 
-        { 
+        {
+            if(!isValidPowerappsFolder(filePath)) return;
+
             string srcPath = Path.GetFullPath(filePath) + "/Src";
-            if (!Directory.Exists(srcPath))
-            {
-                Console.WriteLine($"Directory {srcPath} does not exists!");
-            }
-
             var yamlFiles = getYAMLFilesInDirectory(srcPath);
-
-            Console.WriteLine($"{yamlFiles.Count()} yamlFiles found.");
 
             foreach(var yamlFile in yamlFiles)
             {
-                //Convert yaml to json
-                var yamlFileContent = File.ReadAllText(yamlFile);
-                using var stringReader = new StringReader(yamlFileContent);
-                var yamlObject = yamlDeserializer.Deserialize(stringReader);
-                var jsonString = yamlSerializer.Serialize(yamlObject);
+                var jsonDocument = YamlUtils.SerializeYamlFileAsJsonDocument(yamlFile);
 
-                var jsonDocument = JsonDocument.Parse(jsonString);
                 foreach(var jsonElement in jsonDocument.RootElement.EnumerateObject())
                 {
                     var nameParts = jsonElement.Name.Split(" ", 2);
@@ -77,6 +68,7 @@ namespace PowerDocs
                 
             }
         }
+
 
         public IList<string> getScreenNames()
         {
