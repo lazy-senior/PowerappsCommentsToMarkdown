@@ -21,6 +21,7 @@ namespace PowerDocs
 
         public App()
         {
+            Config = new();
             Screens = new Dictionary<string, JsonElement>();
         }
 

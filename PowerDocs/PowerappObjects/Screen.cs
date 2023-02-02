@@ -8,7 +8,7 @@ namespace PowerDocs.PowerappObjects
 {
     internal class Screen
     {
-        public string OnVisible { get; set; }
+        public string? OnVisible { get; set; }
 
     }
 }

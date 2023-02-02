@@ -38,8 +38,11 @@ namespace PowerDocs
             var yamlFileContent = File.ReadAllText(path);
             using var stringReader = new StringReader(yamlFileContent);
             var yamlObject = yamlDeserializer.Deserialize(stringReader);
-            var jsonString = yamlSerializer.Serialize(yamlObject);
-            return JsonDocument.Parse(jsonString);
+            if(yamlObject != null){
+                var jsonString = yamlSerializer.Serialize(yamlObject);
+                return JsonDocument.Parse(jsonString);
+            }
+            return JsonDocument.Parse("");
         }
 
         public bool IsYamlFile(string path)
