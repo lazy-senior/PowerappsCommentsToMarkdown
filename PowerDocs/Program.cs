@@ -2,6 +2,8 @@
 using CommandLine;
 using PowerDocs;
 
+Console.WriteLine("Starting programm...");
+
 Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed<CommandLineOptions>(o => {
     if (Directory.Exists(o.InputFolder) && File.Exists(o.ConfigFile))
     {
@@ -9,5 +11,7 @@ Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed<CommandLineOp
         pUtils.LoadApp(o.InputFolder);
 
         Console.WriteLine(String.Join(",",pUtils.getScreenNames().ToArray()));
-    } 
+    } else {
+        Console.WriteLine($"Wrong configuration:\r\n\t-i:'{o.InputFolder}'\r\n\t-o:'{o.OutputFile}'\r\n\t-c:'{o.ConfigFile}'");
+    }
 });

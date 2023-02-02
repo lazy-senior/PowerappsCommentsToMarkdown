@@ -11,11 +11,18 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/PowerDocs/bin/Debug/net6.0/portable-octo-broccoli.dll",
-            "args": [],
+            "args": [
+                "-cC:\\Users\\boening\\Documents\\Workspace\\GitHub\\portable-octo-broccoli\\PowerDocs\\config.yaml"
+                , "-iC:\\Users\\boening\\Documents\\Workspace\\GitHub\\powerapps-docstring\\example\\src\\meetingcapturedemo"
+                , "-oC:\\Users\\boening\\Documents\\Workspace\\GitHub\\portable-octo-broccoli\\PowerDocs\\Output\\"
+            ],
             "cwd": "${workspaceFolder}/PowerDocs",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "logging": {
+                "moduleLoad": false
+            }
         },
         {
             "name": ".NET Core Attach",

@@ -1,17 +1,18 @@
-﻿objectsToScan:
-    button: [OnSelect, Text]
-    barcodeScanner: [OnScan]
+﻿propertiesToScan: [Height, Width, X, Y, On]
+objectsToScan:
+    button: [Text]
+    barcodeScanner: []
     form: [DataSource, Item]
-    gallery: [OnSelect, Items]
-    image: [OnSelect, Image]
-    screen: [OnVisible]
-    text: [OnSelect]
-    icon:
-        ArrowsUp: [OnSelect, Icon]
-        Cancel: [OnSelect, Icon]
-        ChevronRight: [OnSelect, Icon]
-        Reload: [OnSelect, Icon]
-        Settins: [OnSelect, Icon]
+    gallery: [Items]
+    image: [Image]
+    screen: []
+    text: []
+    rectangle: [ZIndex]
+    icon: [Icon]
+    container: []
+    group: []
+    label: []
+
 
 mermaidPrefix: "```mermaid"
 mermaidSuffix: "```"

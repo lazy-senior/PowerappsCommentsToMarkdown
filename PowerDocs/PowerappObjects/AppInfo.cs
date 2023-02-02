@@ -8,7 +8,7 @@ namespace PowerDocs.PowerappObjects
 {
     internal class AppInfo
     {
-        public string OnStart { get; set; }
-        public string OnError { get; set; }
+        public string? OnStart { get; set; }
+        public string? OnError { get; set; }
     }
 }
