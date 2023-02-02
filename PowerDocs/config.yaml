@@ -12,6 +12,10 @@ objectsToScan:
     container: []
     group: []
     label: []
+    camera: []
+    typedDataCard: []
+    dropdown: []
+    attachments: []
 
 
 mermaidPrefix: "```mermaid"

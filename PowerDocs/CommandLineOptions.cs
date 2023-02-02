@@ -13,7 +13,7 @@ namespace PowerDocs
         public string? InputFolder { get; set; }
 
         [Option('o', "output", Required = false)]
-        public string? OutputFile { get; set; }
+        public string? OutputFolder { get; set; }
 
         [Option('c', "config", Required = true)]
         public string? ConfigFile { get; set; }

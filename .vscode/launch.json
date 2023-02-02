@@ -13,7 +13,7 @@
             "program": "${workspaceFolder}/PowerDocs/bin/Debug/net6.0/portable-octo-broccoli.dll",
             "args": [
                 "-cC:\\Users\\boening\\Documents\\Workspace\\GitHub\\portable-octo-broccoli\\PowerDocs\\config.yaml"
-                , "-iC:\\Users\\boening\\Documents\\Workspace\\GitHub\\powerapps-docstring\\example\\src\\meetingcapturedemo"
+                , "-iC:\\Users\\boening\\Downloads\\PowerApps-main\\PowerApps-main\\Endabnahme"
                 , "-oC:\\Users\\boening\\Documents\\Workspace\\GitHub\\portable-octo-broccoli\\PowerDocs\\Output\\"
             ],
             "cwd": "${workspaceFolder}/PowerDocs",

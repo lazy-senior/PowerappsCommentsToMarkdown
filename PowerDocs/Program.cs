@@ -9,9 +9,10 @@ Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed<CommandLineOp
     {
         var pUtils = new App(o.ConfigFile);
         pUtils.LoadApp(o.InputFolder);
+        pUtils.GenerateMarkdown(o.OutputFolder);
 
         Console.WriteLine(String.Join(",",pUtils.getScreenNames().ToArray()));
     } else {
-        Console.WriteLine($"Wrong configuration:\r\n\t-i:'{o.InputFolder}'\r\n\t-o:'{o.OutputFile}'\r\n\t-c:'{o.ConfigFile}'");
+        Console.WriteLine($"Wrong configuration:\r\n\t-i:'{o.InputFolder}'\r\n\t-o:'{o.OutputFolder}'\r\n\t-c:'{o.ConfigFile}'");
     }
 });
