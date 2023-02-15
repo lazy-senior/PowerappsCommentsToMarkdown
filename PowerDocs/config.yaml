@@ -1,4 +1,4 @@
-﻿propertiesToScan: [Height, Width, X, Y, On]
+﻿propertiesToScan: [Height, Width, X, Y]
 objectsToScan:
     button: [Text]
     barcodeScanner: []

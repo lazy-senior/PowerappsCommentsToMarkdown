@@ -2,8 +2,6 @@
 using CommandLine;
 using PowerDocs;
 
-Console.WriteLine("Starting programm...");
-
 Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed<CommandLineOptions>(o => {
     if (Directory.Exists(o.InputFolder) && File.Exists(o.ConfigFile))
     {

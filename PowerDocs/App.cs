@@ -83,13 +83,16 @@ namespace PowerDocs
         }
         public void GenerateMarkdown(string outputPath)
         {
+            Console.WriteLine("Generating .md-files...");
+            Console.WriteLine($"\tScreens:{this.Screens.Count}");
+            Console.WriteLine($"\tSaving to:{outputPath}");
             foreach(var screen in this.Screens)
             {
+                Console.Write($"\t->{screen.Key}:");
                 LoadProperties(screen.Key, screen.Value, 0);
                 markdownGenerator.OutputToFile($"{outputPath}\\{screen.Key}.md");
-                break;
+                Console.WriteLine($"\tdone.");
             }
-
         }
         public void LoadProperties(string name, JsonElement jsonElement, int depth)
         {

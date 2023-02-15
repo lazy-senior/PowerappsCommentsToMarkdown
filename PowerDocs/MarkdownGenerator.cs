@@ -44,7 +44,7 @@ namespace PowerDocs
             Output.AppendLine("|---|---|");
         }
         private void AddTableLine(string key, string value){
-            Output.AppendLine($"|{key}|{value}");
+            Output.AppendLine($"|{key}|{value}|");
         }
         private void AddCodeBlock(string key, string value){
             Output.AppendLine($"{key}");
