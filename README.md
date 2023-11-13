@@ -9,3 +9,8 @@ Based on https://github.com/sebastian-muthwill/powerapps-docstring, which someho
 -o: Output Folder
 
 -c: Config File (see config.yaml)
+
+# config 
+﻿propertiesToScan: these properties will be searched for comments on every object in objectsToScan. (Only use common properties here, which are present in (almost) every object)
+ 
+objectsToScan: objects and their properties which will be searched for comments (For object-specific properties)
